@@ -1,39 +1,113 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+# **buatbesok_flutter_assets_generator**
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages).
+Buatbesok flutter tool to generate assets configs in pubspec.yaml and assets as constant variables automatically for Repro structured project
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages).
--->
+## **Preview**
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+![Preview Buatbesok Flutter Assets Generator](documentation/preview.gif)
 
-## Features
+## **Contents**
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+- [**buatbesok\_flutter\_assets\_generator**](#buatbesok_flutter_assets_generator)
+  - [**Preview**](#preview)
+  - [**Contents**](#contents)
+  - [**Getting Started**](#getting-started)
+    - [1. Adding Package Into `pubspec.yaml`](#1-adding-package-into-pubspecyaml)
+    - [2. Updating Bash Environement](#2-updating-bash-environement)
+    - [3. Package Activation](#3-package-activation)
+  - [**Use Cases**](#use-cases)
+    - [All `assets_generator` Commands](#all-assets_generator-commands)
+    - [Example `assets_generator` Command](#example-assets_generator-command)
+    - [Example Usage In Project](#example-usage-in-project)
+    - [Example Usage In Module](#example-usage-in-module)
 
-## Getting started
+## **Getting Started**
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+### 1. Adding Package Into `pubspec.yaml`
 
-## Usage
-
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
-
-```dart
-const like = 'sample';
+```.
+dependencies:
+  ...
+  buatbesok_flutter_assets_generator:
+    git:
+      url: https://github.com/Buat-Besok/buatbesok_flutter_assets_generator.git
+  ...
 ```
 
-## Additional information
+### 2. Updating Bash Environement
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+| Platform       |   Pub Cache Location    |
+| -------------- | :---------------------: |
+| macOS or Linux |  $HOME/.pub-cache/bin   |
+| Windows*       | %APPDATA%\Pub\Cache\bin |
+
+- case using macos and bash flavour is zshrc
+- open Terminal
+- run `cd ~`
+- run `nano .zshrc`
+- case pub cache location in `Users/jagad/`
+- copy and paste
+
+```.
+  #? buatbesok flutter assets generator
+  export PATH="$PATH":"/Users/jagad/.pub-cache/bin"
+```
+
+- save and restart terminal
+
+### 3. Package Activation
+
+to activate this package, please do this steps
+
+- run `dart pub global activate --source git https://github.com/Buat-Besok/buatbesok_flutter_assets_generator.git`
+- readmore [dart pub global documentation](https://dart.dev/tools/pub/cmd/pub-global)
+
+## **Use Cases**
+
+### All `assets_generator` Commands
+
+```.
+-h, --[no-]help       Help usage
+-p, --path            Flutter project root path
+                      (defaults to ".")
+-f, --folder          The root folder of assets
+                      (defaults to "assets")
+-w, --[no-]watch      Whether continue to monitor the changes of assets
+                      (defaults to on)
+-t, --type            The type in pubsepec.yaml
+                      "d" means directory "- assets/images/"
+                      "f" means file      "- assets/images/xxx.jpg"
+                      (defaults to "d")
+-s, --[no-]save       Whether save the arguments into the local
+                      It will execute the local arguments if run "assets_generator"
+                      without any arguments
+-o, --out             The path of const Class
+                      (defaults to "lib/app/generated")
+-r, --rule            The rule for the names of assets' consts
+                      "lwu"(lowercase_with_underscores) : "images_xxx_jpg"
+                      "uwu"(uppercase_with_underscores) : "IMAGES_XXX_JPG"
+                      "lcc"(lowerCamelCase)             : "imagesXxxJpg"
+                      (defaults to "lwu")
+-c, --class           The name of const Class
+                      (defaults to "Assets")
+    --const-ignore    The regular to ignore some consts
+```
+
+### Example `assets_generator` Command
+
+`assets_generator -t f -r lwu`
+
+### Example Usage In Project
+
+```.
+  Image.asset(Assets.images_xxx_jpg);
+```
+
+### Example Usage In Module
+
+```.
+  Image.asset(
+    Assets.images_xxx_jpg,
+    package: Assets.package,
+  );
+```
