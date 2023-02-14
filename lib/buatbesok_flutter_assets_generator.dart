@@ -1,7 +1,22 @@
+//? source https://github.com/fluttercandies/assets_generator
+
+//FIXME CRASH WHEN USER DIRECTLY DELETE FOLDER INSIDE ASSETS
+
 library buatbesok_flutter_assets_generator;
 
-/// A Calculator.
-class Calculator {
-  /// Returns [value] plus 1.
-  int addOne(int value) => value + 1;
-}
+export 'src/arg/arg.dart';
+export 'src/arg/arg_parser.dart';
+export 'src/arg/class.dart';
+export 'src/arg/const_array.dart';
+export 'src/arg/const_ignore.dart';
+export 'src/arg/folder.dart';
+export 'src/arg/folder_ignore.dart';
+export 'src/arg/help.dart';
+export 'src/arg/output.dart';
+export 'src/arg/package.dart';
+export 'src/arg/path.dart';
+export 'src/arg/rule.dart';
+export 'src/arg/save.dart';
+export 'src/arg/type.dart';
+export 'src/arg/watch.dart';
+export 'src/assets_generator.dart';
