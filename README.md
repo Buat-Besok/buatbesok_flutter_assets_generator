@@ -49,8 +49,8 @@ dependencies:
 - copy and paste
 
 ```.
-  #? buatbesok flutter assets generator
-  export PATH="$PATH":"/Users/jagad/.pub-cache/bin"
+#? buatbesok flutter assets generator
+export PATH="$PATH":"/Users/jagad/.pub-cache/bin"
 ```
 
 - save and restart terminal
@@ -96,20 +96,20 @@ to activate this package, please do this steps
 ### Example `assets_generator` Command
 
 ```.
-  assets_generator -t f -r lwu
+assets_generator -t f -r lwu
 ```
 
 ### Example Usage In Project
 
 ```.
-  Image.asset(Assets.images_xxx_jpg);
+Image.asset(Assets.images_xxx_jpg);
 ```
 
 ### Example Usage In Module
 
 ```.
-  Image.asset(
-    Assets.images_xxx_jpg,
-    package: Assets.package,
-  );
+Image.asset(
+  Assets.images_xxx_jpg,
+  package: Assets.package,
+);
 ```
