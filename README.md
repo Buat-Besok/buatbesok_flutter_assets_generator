@@ -95,7 +95,9 @@ to activate this package, please do this steps
 
 ### Example `assets_generator` Command
 
-`assets_generator -t f -r lwu`
+```.
+  assets_generator -t f -r lwu
+```
 
 ### Example Usage In Project
 
