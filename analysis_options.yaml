@@ -21,7 +21,7 @@ linter:
     - avoid_js_rounded_ints
     - avoid_multiple_declarations_per_line
     - avoid_null_checks_in_equality_operators
-    - avoid_print
+    # - avoid_print
     - avoid_private_typedef_functions
     - avoid_redundant_argument_values
     - avoid_relative_lib_imports
@@ -201,7 +201,7 @@ dart_code_metrics:
   rules:
     - always-remove-listener
     - avoid-duplicate-exports
-    - avoid-global-state
+    # - avoid-global-state
     - avoid-missing-enum-constant-in-map
     - avoid-nested-conditional-expressions:
         acceptable-level: 3
