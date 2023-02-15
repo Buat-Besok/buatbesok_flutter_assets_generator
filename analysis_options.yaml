@@ -1,4 +1,4 @@
-#? repro linter rules
+#? repro linter rules for package development
 
 include: package:flutter_lints/flutter.yaml
 

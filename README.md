@@ -13,7 +13,7 @@ Buatbesok flutter tool to generate assets configs in pubspec.yaml and assets as 
   - [**Contents**](#contents)
   - [**Getting Started**](#getting-started)
     - [1. Adding Package Into `pubspec.yaml`](#1-adding-package-into-pubspecyaml)
-    - [2. Updating Bash Environement](#2-updating-bash-environement)
+    - [2. Target Environement](#2-target-environement)
     - [3. Package Activation](#3-package-activation)
   - [**Use Cases**](#use-cases)
     - [All `assets_generator` Commands](#all-assets_generator-commands)
@@ -34,7 +34,7 @@ dependencies:
   ...
 ```
 
-### 2. Updating Bash Environement
+### 2. Target Environement
 
 | Platform       |   Pub Cache Location    |
 | -------------- | :---------------------: |
