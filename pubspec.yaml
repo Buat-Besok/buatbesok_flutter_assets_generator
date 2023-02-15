@@ -24,5 +24,3 @@ dev_dependencies:
 
 executables:
   assets_generator: main
-
-flutter:
