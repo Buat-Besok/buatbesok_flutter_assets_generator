@@ -36,10 +36,11 @@ dependencies:
 
 ### 2. Target Environement
 
-| Platform       |   Pub Cache Location    |
+| Platform       | Pub Cache Location      |
 | -------------- | :---------------------: |
-| macOS or Linux |  $HOME/.pub-cache/bin   |
+| macOS          | $HOME/.pub-cache/bin    |
 | Windows*       | %APPDATA%\Pub\Cache\bin |
+| Linux          | $HOME/.pub-cache/bin    |
 
 - case using macos and bash flavour is zshrc
 - open Terminal
