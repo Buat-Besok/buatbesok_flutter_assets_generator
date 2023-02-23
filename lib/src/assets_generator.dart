@@ -143,19 +143,21 @@ class Generator {
         await template.generateFile(miss, previewFile),
       ),
     );
-    if (previewFile.existsSync()) {
-      final File gitIgnoreFile = File('$path/.gitignore');
-      if (!gitIgnoreFile.existsSync()) {
-        gitIgnoreFile.createSync(recursive: true);
-      }
 
-      final String line = previewFile.path.replaceAll(path, '');
-      String content = await gitIgnoreFile.readAsString();
-      if (!content.contains(line)) {
-        content += '\n$line';
-        await gitIgnoreFile.writeAsString(content);
-      }
-    }
+    //? disable gitignore on preview file
+    // if (previewFile.existsSync()) {
+    //   final File gitIgnoreFile = File('$path/.gitignore');
+    //   if (!gitIgnoreFile.existsSync()) {
+    //     gitIgnoreFile.createSync(recursive: true);
+    //   }
+
+    //   final String line = previewFile.path.replaceAll(path, '');
+    //   String content = await gitIgnoreFile.readAsString();
+    //   if (!content.contains(line)) {
+    //     content += '\n$line';
+    //     await gitIgnoreFile.writeAsString(content);
+    //   }
+    // }
   }
 
   Map<String, String> checkResolutionImageAssets(final List<String> assets) {
