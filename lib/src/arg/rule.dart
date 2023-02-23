@@ -21,11 +21,15 @@ class Rule extends Argument<String> {
   String go(String input) {
     //? uppercase_with_underscores
     if (value == 'uwu') {
+      input = input.substring(7);
+      print(green.wrap('uwu - $input'));
       return input.toUpperCase();
     }
 
     //? lowerCamelCase
     else if (value == 'lcc') {
+      input = input.substring(6);
+      print(green.wrap('lcc - $input'));
       input = input.replaceAllMapped(RegExp('_([A-z])'), (final Match match) {
         return match.group(0)!.replaceAll('_', '').toUpperCase();
       }).replaceAll('_', '');
@@ -37,7 +41,7 @@ class Rule extends Argument<String> {
 
     //? lowercase_with_underscores
     else {
-      input = input.substring(6);
+      input = input.substring(7);
       print(green.wrap('lwu - $input'));
       return input.toLowerCase();
     }
