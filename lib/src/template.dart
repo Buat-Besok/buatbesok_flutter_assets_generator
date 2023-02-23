@@ -77,6 +77,7 @@ class Template {
     }
     final StringBuffer previewImageSb = StringBuffer();
 
+    print(green.wrap('\nGENERATING ASSETS CONST'));
     for (final String asset in assets) {
       if (constIgnore != null && constIgnore!.hasMatch(asset)) {
         continue;
@@ -139,7 +140,6 @@ class Template {
   }
 
   String _formatFiledName(String path) {
-    print(green.wrap('\nGENERATING ASSETS CONST'));
     path = path
         .replaceAll('/', '_')
         .replaceAll('.', '_')

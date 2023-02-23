@@ -12,9 +12,8 @@ Buatbesok flutter tool to generate assets configs in pubspec.yaml and assets as 
   - [**Preview**](#preview)
   - [**Contents**](#contents)
   - [**Getting Started**](#getting-started)
-    - [1. Adding Package Into `pubspec.yaml`](#1-adding-package-into-pubspecyaml)
-    - [2. Target Environement](#2-target-environement)
-    - [3. Package Activation](#3-package-activation)
+    - [1. Target Environement](#1-target-environement)
+    - [2. Package Activation](#2-package-activation)
   - [**Use Cases**](#use-cases)
     - [All `assets_generator` Commands](#all-assets_generator-commands)
     - [Example `assets_generator` Command](#example-assets_generator-command)
@@ -23,18 +22,7 @@ Buatbesok flutter tool to generate assets configs in pubspec.yaml and assets as 
 
 ## **Getting Started**
 
-### 1. Adding Package Into `pubspec.yaml`
-
-```.
-dependencies:
-  ...
-  buatbesok_flutter_assets_generator:
-    git:
-      url: https://github.com/Buat-Besok/buatbesok_flutter_assets_generator.git
-  ...
-```
-
-### 2. Target Environement
+### 1. Target Environement
 
 | Platform       | Pub Cache Location      |
 | -------------- | :---------------------: |
@@ -66,7 +54,7 @@ export PATH="$PATH":"/Users/jagad/.pub-cache/bin"
 
 - save and restart terminal
 
-### 3. Package Activation
+### 2. Package Activation
 
 to activate this package, please do this steps
 
@@ -112,7 +100,7 @@ dart pub global activate --source git https://github.com/Buat-Besok/buatbesok_fl
 ### Example `assets_generator` Command
 
 ```.
-assets_generator -t f -r lwu
+assets_generator -t f
 ```
 
 ### Example Usage In Project
