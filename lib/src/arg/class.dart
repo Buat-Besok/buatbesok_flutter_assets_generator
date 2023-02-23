@@ -1,3 +1,7 @@
+// ignore_for_file: avoid_print
+
+import 'package:io/ansi.dart';
+
 import 'arg.dart';
 
 class Class extends Argument<String> {
@@ -15,7 +19,7 @@ class Class extends Argument<String> {
 
   String? go(final String rule) {
     String? input = value;
-    //upperCamelCase
+    //? UpperCamelCase
     if (rule == 'ucc') {
       if (input!.length > 1) {
         input = input[0].toUpperCase() + input.substring(1);
@@ -26,7 +30,8 @@ class Class extends Argument<String> {
         input = input.toUpperCase();
       }
     }
-    //lowercaseCamelCase
+
+    //? lowercaseCamelCase
     else if (rule == 'lcc') {
       if (input!.length > 1) {
         input = input[0].toLowerCase() + input.substring(1);
@@ -37,7 +42,8 @@ class Class extends Argument<String> {
         input = input.toLowerCase();
       }
     }
-    //lowercase_with_underscores
+
+    //? lowercase_with_underscores
     else if (rule == 'lwu') {
       if (input!.length > 1) {
         input = input[0].toLowerCase() + input.substring(1);
@@ -45,9 +51,12 @@ class Class extends Argument<String> {
             (final Match match) {
           return '${match.group(0)![0]}_${match.group(0)![1].toLowerCase()}';
         });
+        input = input.substring(6);
       } else {
         input = input.toLowerCase();
+        input = input.substring(6);
       }
+      print(green.wrap('lwu - $input'));
     }
 
     return input;

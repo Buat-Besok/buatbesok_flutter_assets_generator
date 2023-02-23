@@ -109,17 +109,18 @@ class Generator {
     final List<String> assets,
     final Map<String, String> miss,
   ) async {
+    print(green.wrap('\nGENERATING ASSETS FILES'));
     final String path = packageGraph!.path;
-    print(green.wrap('GENERATING CONST FILES'));
-    print(green.wrap(path));
     final String? fileName = class1!.go('lwu');
 
+    print(green.wrap('$path${output!}$fileName.dart'));
     final File file = File(join(path, output, '$fileName.dart'));
 
     if (file.existsSync()) {
       file.deleteSync(recursive: true);
     }
 
+    print(green.wrap('$path${output!}$fileName.dart\n'));
     final File previewFile = File(join(path, output, '$fileName.preview.dart'));
     if (previewFile.existsSync()) {
       previewFile.deleteSync(recursive: true);
@@ -140,6 +141,7 @@ class Generator {
       constArray,
       package,
     );
+
     file.writeAsStringSync(
       formatDart(
         await template.generateFile(miss, previewFile),
