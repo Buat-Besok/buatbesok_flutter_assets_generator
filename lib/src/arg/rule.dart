@@ -1,5 +1,7 @@
 // ignore_for_file: avoid_print
 
+import 'package:io/ansi.dart';
+
 import 'arg.dart';
 
 class Rule extends Argument<String> {
@@ -17,11 +19,12 @@ class Rule extends Argument<String> {
   String get name => 'rule';
 
   String go(String input) {
-    //uppercase_with_underscores
+    //? uppercase_with_underscores
     if (value == 'uwu') {
       return input.toUpperCase();
     }
-    //lowerCamelCase
+
+    //? lowerCamelCase
     else if (value == 'lcc') {
       input = input.replaceAllMapped(RegExp('_([A-z])'), (final Match match) {
         return match.group(0)!.replaceAll('_', '').toUpperCase();
@@ -31,8 +34,11 @@ class Rule extends Argument<String> {
 
       return input;
     }
-    //lowercase_with_underscores
+
+    //? lowercase_with_underscores
     else {
+      input = input.substring(6);
+      print(green.wrap('lwu - $input'));
       return input.toLowerCase();
     }
   }

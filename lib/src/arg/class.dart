@@ -1,7 +1,5 @@
 // ignore_for_file: avoid_print
 
-import 'package:io/ansi.dart';
-
 import 'arg.dart';
 
 class Class extends Argument<String> {
@@ -51,12 +49,9 @@ class Class extends Argument<String> {
             (final Match match) {
           return '${match.group(0)![0]}_${match.group(0)![1].toLowerCase()}';
         });
-        input = input.substring(6);
       } else {
         input = input.toLowerCase();
-        input = input.substring(6);
       }
-      print(green.wrap('lwu - $input'));
     }
 
     return input;

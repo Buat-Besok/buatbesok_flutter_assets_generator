@@ -3,7 +3,6 @@
 import 'dart:io';
 
 import 'package:build_runner_core/build_runner_core.dart';
-import 'package:io/ansi.dart';
 import 'package:mime/mime.dart';
 import 'package:path/path.dart';
 
@@ -65,7 +64,6 @@ class Template {
     final Map<String, String> miss,
     final File previewFile,
   ) async {
-    print(green.wrap('\nGENERATING ASSETS VARIABLES'));
     final StringBuffer sb = StringBuffer()..write(license);
     final StringBuffer arraySb = StringBuffer();
     final String className = class1!.go('ucc')!;
