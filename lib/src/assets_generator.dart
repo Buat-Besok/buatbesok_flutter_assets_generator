@@ -110,6 +110,8 @@ class Generator {
     final Map<String, String> miss,
   ) async {
     final String path = packageGraph!.path;
+    print(green.wrap('GENERATING CONST FILES'));
+    print(green.wrap(path));
     final String? fileName = class1!.go('lwu');
 
     final File file = File(join(path, output, '$fileName.dart'));
