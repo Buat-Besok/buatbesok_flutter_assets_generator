@@ -44,8 +44,18 @@ dependencies:
 
 - case using macos and bash flavour is zshrc
 - open Terminal
-- run `cd ~`
-- run `nano .zshrc`
+- run
+
+```.
+cd ~
+```
+
+- run
+
+```.
+nano .zshrc
+```
+
 - case pub cache location in `Users/jagad/`
 - copy and paste
 
@@ -60,7 +70,12 @@ export PATH="$PATH":"/Users/jagad/.pub-cache/bin"
 
 to activate this package, please do this steps
 
-- run `dart pub global activate --source git https://github.com/Buat-Besok/buatbesok_flutter_assets_generator.git`
+- run
+
+```.
+dart pub global activate --source git https://github.com/Buat-Besok/buatbesok_flutter_assets_generator.git`
+```
+
 - readmore [dart pub global documentation](https://dart.dev/tools/pub/cmd/pub-global)
 
 ## **Use Cases**
