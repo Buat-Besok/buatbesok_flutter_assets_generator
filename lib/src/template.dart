@@ -3,6 +3,7 @@
 import 'dart:io';
 
 import 'package:build_runner_core/build_runner_core.dart';
+import 'package:io/ansi.dart';
 import 'package:mime/mime.dart';
 import 'package:path/path.dart';
 
@@ -138,12 +139,14 @@ class Template {
   }
 
   String _formatFiledName(String path) {
+    print(green.wrap('\nGENERATING ASSETS CONST'));
     path = path
         .replaceAll('/', '_')
         .replaceAll('.', '_')
         .replaceAll(' ', '_')
         .replaceAll('-', '_')
         .replaceAll('@', '_AT_');
+
     return rule!.go(path);
   }
 }

@@ -109,19 +109,20 @@ class Generator {
     final List<String> assets,
     final Map<String, String> miss,
   ) async {
-    print(green.wrap('\nGENERATING ASSETS FILES'));
+    print(green.wrap('\nGENERATING ASSETS & PREVIEW FILES'));
     final String path = packageGraph!.path;
     final String? fileName = class1!.go('lwu');
 
-    print(green.wrap('$path${output!}$fileName.dart'));
     final File file = File(join(path, output, '$fileName.dart'));
+    print(green.wrap(file.path));
 
     if (file.existsSync()) {
       file.deleteSync(recursive: true);
     }
 
-    print(green.wrap('$path${output!}$fileName.dart\n'));
     final File previewFile = File(join(path, output, '$fileName.preview.dart'));
+    print(green.wrap(file.path));
+
     if (previewFile.existsSync()) {
       previewFile.deleteSync(recursive: true);
     }
@@ -170,7 +171,7 @@ class Generator {
     if (assets.isEmpty) {
       return miss;
     }
-    print(green.wrap('find following assets: '));
+    print(green.wrap('\nFOUNDS THE FOLLOWING ASSETS'));
     // 1.5x,2.0x,3.0x
     final RegExp regExp = RegExp('(([0-9]+).([0-9]+)|([0-9]+))x/');
     // check resolution image assets

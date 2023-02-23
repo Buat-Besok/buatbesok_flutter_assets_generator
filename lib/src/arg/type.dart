@@ -5,7 +5,7 @@ class Type extends Argument<String> {
   String get abbr => 't';
 
   @override
-  String get defaultsTo => 'd';
+  String get defaultsTo => 'f';
 
   @override
   String get help =>
@@ -15,10 +15,10 @@ class Type extends Argument<String> {
   String get name => 'type';
 
   FormatType type(final String? value) {
-    if (value == 'f') {
-      return FormatType.file;
+    if (value == 'd') {
+      return FormatType.directory;
     }
-    return FormatType.directory;
+    return FormatType.file;
   }
 }
 

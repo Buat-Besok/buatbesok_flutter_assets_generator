@@ -143,9 +143,10 @@ class Yaml {
       yamlString = yamlString.replaceAll('assets:', '').trim();
     }
 
+    print(green.wrap('\nYAML CONFIG HAS BEEN UPDATED'));
     yamlString = yamlString.trim();
     yamlFile.writeAsStringSync(yamlString);
-    print(green.wrap('${yamlFile.path} is changed automatically.'));
+    print(green.wrap(yamlFile.path));
   }
 }
 
