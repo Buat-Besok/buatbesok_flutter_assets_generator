@@ -61,7 +61,7 @@ to activate this package, please do this steps
 - run
 
 ```.
-dart pub global activate --source git https://github.com/Buat-Besok/buatbesok_flutter_assets_generator.git`
+dart pub global activate --source git https://github.com/Buat-Besok/buatbesok_flutter_assets_generator.git
 ```
 
 - readmore [dart pub global documentation](https://dart.dev/tools/pub/cmd/pub-global)
