@@ -100,7 +100,7 @@ dart pub global activate --source git https://github.com/Buat-Besok/buatbesok_fl
 ### Example `assets_generator` Command
 
 ```.
-assets_generator -t f
+assets_generator -t f -c "ReAssets"
 ```
 
 ### Example Usage In Project
