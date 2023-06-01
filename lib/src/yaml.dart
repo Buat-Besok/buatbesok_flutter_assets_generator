@@ -51,7 +51,7 @@ class Yaml {
         ..addAll(directories);
     }
 
-    assets.sort((final String a, final String b) => a.compareTo(b));
+    assets.sort((String a, String b) => a.compareTo(b));
 
     String yamlString = yamlFile.readAsStringSync();
 
@@ -75,8 +75,8 @@ class Yaml {
     int start = yamlString.indexOf(assetsStart);
     if (start > -1) {
       final List<String> lines = yamlString.split('\n');
-      final String line = lines
-          .firstWhere((final String element) => element.contains(assetsStart));
+      final String line =
+          lines.firstWhere((String element) => element.contains(assetsStart));
       start = yamlString.indexOf(line);
     }
     final int end = yamlString.indexOf(assetsEnd);
@@ -94,8 +94,7 @@ class Yaml {
           if (flutter.containsKey('assets')) {
             final YamlList? assetsNode = flutter['assets'] as YamlList?;
             final YamlNode? target = flutter.nodes.keys.firstWhere(
-              (final dynamic node) =>
-                  node is YamlNode && node.span.text == 'assets',
+              (dynamic node) => node is YamlNode && node.span.text == 'assets',
             ) as YamlNode?;
             final FileSpan sourceSpan = target!.span as FileSpan;
 
@@ -150,7 +149,7 @@ class Yaml {
   }
 }
 
-String getIndent(final YamlMap yamlMap) {
+String getIndent(YamlMap yamlMap) {
   if (yamlMap.containsKey('flutter')) {
     final YamlMap? flutter = yamlMap['flutter'] as YamlMap?;
     if (flutter != null && flutter.nodes.keys.first is YamlNode) {

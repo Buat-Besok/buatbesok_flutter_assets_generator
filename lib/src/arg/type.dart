@@ -14,7 +14,7 @@ class Type extends Argument<String> {
   @override
   String get name => 'type';
 
-  FormatType type(final String? value) {
+  FormatType type(String? value) {
     if (value == 'd') {
       return FormatType.directory;
     }

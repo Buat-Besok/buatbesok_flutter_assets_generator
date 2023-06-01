@@ -62,8 +62,8 @@ class Template {
   );
 
   Future<String> generateFile(
-    final Map<String, String> miss,
-    final File previewFile,
+    Map<String, String> miss,
+    File previewFile,
   ) async {
     final StringBuffer sb = StringBuffer()..write(license);
     final StringBuffer arraySb = StringBuffer();
@@ -135,7 +135,7 @@ class Template {
     return sb.toString();
   }
 
-  String formatFiled(final String path) {
+  String formatFiled(String path) {
     return '''static const String ${_formatFiledName(path)} = '$path';\n''';
   }
 

@@ -5,7 +5,7 @@ import 'package:io/ansi.dart';
 
 final DartFormatter _formatter = DartFormatter();
 
-String formatDart(final String input) {
+String formatDart(String input) {
   try {
     return _formatter.format(input);
   } catch (e) {

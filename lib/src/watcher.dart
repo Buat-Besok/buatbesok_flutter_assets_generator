@@ -10,7 +10,7 @@ typedef AssetsChanged = void Function();
 class Watcher {
   Watcher(this.dirList, this.assetsChanged);
 
-  Watcher.single(final Directory dir, this.assetsChanged)
+  Watcher.single(Directory dir, this.assetsChanged)
       : dirList = <Directory>[dir];
 
   /// all of the directory with yaml.
@@ -22,9 +22,9 @@ class Watcher {
 
   /// when the directory is change
   /// refresh the code
-  StreamSubscription<FileSystemEvent>? _watch(final FileSystemEntity file) {
+  StreamSubscription<FileSystemEvent>? _watch(FileSystemEntity file) {
     if (FileSystemEntity.isWatchSupported) {
-      return file.watch().listen((final FileSystemEvent data) {
+      return file.watch().listen((FileSystemEvent data) {
         if (data.isDirectory) {
           final Directory directory = Directory(data.path);
 

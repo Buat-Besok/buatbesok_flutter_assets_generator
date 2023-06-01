@@ -15,13 +15,13 @@ class Class extends Argument<String> {
   @override
   String get name => 'class';
 
-  String? go(final String rule) {
+  String? go(String rule) {
     String? input = value;
     //? UpperCamelCase
     if (rule == 'ucc') {
       if (input!.length > 1) {
         input = input[0].toUpperCase() + input.substring(1);
-        input = input.replaceAllMapped(RegExp('_([A-z])'), (final Match match) {
+        input = input.replaceAllMapped(RegExp('_([A-z])'), (Match match) {
           return match.group(0)!.replaceAll('_', '').toUpperCase();
         }).replaceAll('_', '');
       } else {
@@ -33,7 +33,7 @@ class Class extends Argument<String> {
     else if (rule == 'lcc') {
       if (input!.length > 1) {
         input = input[0].toLowerCase() + input.substring(1);
-        input = input.replaceAllMapped(RegExp('_([A-z])'), (final Match match) {
+        input = input.replaceAllMapped(RegExp('_([A-z])'), (Match match) {
           return match.group(0)!.replaceAll('_', '').toUpperCase();
         }).replaceAll('_', '');
       } else {
@@ -45,8 +45,7 @@ class Class extends Argument<String> {
     else if (rule == 'lwu') {
       if (input!.length > 1) {
         input = input[0].toLowerCase() + input.substring(1);
-        input = input.replaceAllMapped(RegExp('([a-z])([A-Z])'),
-            (final Match match) {
+        input = input.replaceAllMapped(RegExp('([a-z])([A-Z])'), (Match match) {
           return '${match.group(0)![0]}_${match.group(0)![1].toLowerCase()}';
         });
       } else {

@@ -30,7 +30,7 @@ class Rule extends Argument<String> {
     else if (value == 'lcc') {
       input = input.substring(6);
       print(green.wrap('lcc - $input'));
-      input = input.replaceAllMapped(RegExp('_([A-z])'), (final Match match) {
+      input = input.replaceAllMapped(RegExp('_([A-z])'), (Match match) {
         return match.group(0)!.replaceAll('_', '').toUpperCase();
       }).replaceAll('_', '');
       input = input.replaceRange(0, 6, '');
@@ -71,7 +71,7 @@ void regExpTest() {
   const String string = 'assetsImagesXxxJpg';
 
   final String newString =
-      string.replaceAllMapped(RegExp('([a-z])([A-Z])'), (final Match match) {
+      string.replaceAllMapped(RegExp('([a-z])([A-Z])'), (Match match) {
     return '${match.group(0)![0]}_${match.group(0)![1].toLowerCase()}';
   });
 

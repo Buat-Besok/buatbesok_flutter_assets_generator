@@ -51,7 +51,7 @@ Future<void> main(List<String> arguments) async {
 
   final PackageNode rootNode = packageGraph.root;
   for (final PackageNode packageNode in packageGraph.allPackages.values.where(
-    (final PackageNode packageGraph) =>
+    (PackageNode packageGraph) =>
         packageGraph.dependencyType == DependencyType.path &&
         packageGraph.path.startsWith(rootNode.path),
   )) {

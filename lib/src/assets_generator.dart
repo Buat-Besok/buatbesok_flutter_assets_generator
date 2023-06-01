@@ -67,7 +67,7 @@ class Generator {
     // resolution image assets miss main asset entry
     final Map<String, String> miss = checkResolutionImageAssets(assets);
 
-    assets.sort((final String a, final String b) => a.compareTo(b));
+    assets.sort((String a, String b) => a.compareTo(b));
 
     await generateConstsFile(assets, miss);
 
@@ -77,9 +77,9 @@ class Generator {
   }
 
   void findAssets(
-    final Directory directory,
-    final List<String> assets,
-    final List<Directory> dirList,
+    Directory directory,
+    List<String> assets,
+    List<Directory> dirList,
   ) {
     dirList.add(directory);
 
@@ -106,8 +106,8 @@ class Generator {
   }
 
   Future<void> generateConstsFile(
-    final List<String> assets,
-    final Map<String, String> miss,
+    List<String> assets,
+    Map<String, String> miss,
   ) async {
     print(green.wrap('\nGENERATING ASSETS & PREVIEW FILES'));
     final String path = packageGraph!.path;
@@ -165,7 +165,7 @@ class Generator {
     // }
   }
 
-  Map<String, String> checkResolutionImageAssets(final List<String> assets) {
+  Map<String, String> checkResolutionImageAssets(List<String> assets) {
     // miss main asset entry
     final Map<String, String> miss = <String, String>{};
     if (assets.isEmpty) {
@@ -179,7 +179,7 @@ class Generator {
 
     for (final String asset in list) {
       print(green.wrap(asset));
-      final String r = asset.replaceAllMapped(regExp, (final Match match) {
+      final String r = asset.replaceAllMapped(regExp, (Match match) {
         return '';
       });
       //macth
